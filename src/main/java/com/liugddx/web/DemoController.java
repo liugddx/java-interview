@@ -1,6 +1,9 @@
 package com.liugddx.web;
 
+import javax.websocket.server.PathParam;
 import lombok.Data;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +28,22 @@ public class DemoController {
     public String testRule(@RequestBody Param param){
 
         return param.getTest();
+    }
+
+    @GetMapping("/get/{id}")
+    public String get(@PathVariable("id") String id){
+        return id;
+    }
+
+    @PostMapping("/postRule")
+    public String postRule(@PathParam("test") String test){
+
+        return test;
+    }
+
+    @GetMapping("/none")
+    public String none(){
+        return "none";
     }
 
 }
