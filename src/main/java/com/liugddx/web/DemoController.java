@@ -1,5 +1,7 @@
 package com.liugddx.web;
 
+import com.liugddx.validation.CheckTimeInterval;
+import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,11 +23,12 @@ public class DemoController {
 
     @Data
     static class Param{
+        @CheckTimeInterval(values = "1")
         private String test;
     }
 
     @PostMapping("/test")
-    public String testRule(@RequestBody Param param){
+    public String testRule(@Valid @RequestBody Param param){
 
         return param.getTest();
     }
