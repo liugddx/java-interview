@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: java-interview
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://106.52.95.63:9001/eureka
