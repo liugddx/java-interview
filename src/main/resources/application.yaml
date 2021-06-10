@@ -1,8 +1,12 @@
 server:
   port: 8081
 spring:
+  mvc:
+    static-path-pattern: /**
   application:
     name: java-interview
+  thymeleaf:
+    prefix: classpath:/templates/
 eureka:
   instance:
     hostname: localhost
