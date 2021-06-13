@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @date 2021/5/26 15:30
  */
-@Component
+//@Component
 @AllArgsConstructor
 public class RuleFilter implements Filter {
 
